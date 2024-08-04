@@ -43,7 +43,7 @@
   }
   
   h1, h2, .name {
-    font-size: 32px; /* Adjusted to handle both h1 and custom .name class */
+    font-size: 32px; 
   }
   
   .fade, .two {
@@ -59,7 +59,7 @@
   name {
     font-family: 'Lato', Verdana, Helvetica, sans-serif;
     font-size: 32px;
-    font-weight: bold;  /* This line makes the text bold */
+    font-weight: bold;  
   }
 
   table {
@@ -95,11 +95,19 @@ nav {
   
   
   .section-container {
-    background-color: #f7f7f7; /* As previously suggested, a medium gray */
+    background-color: #f7f7f7; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.85) rotate(-10deg) translateY(50px); /* Start smaller, rotated, and lower */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-out; 
+}
+
+.section-container.active {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0); 
 }
 
 .project-layout {
@@ -108,14 +116,14 @@ nav {
 }
 
 .main-content {
-    flex: 3; /* Takes up 75% of the container */
-    padding-right: 20px; /* Space between the main content and sidebar */
+    flex: 3; 
+    padding-right: 20px; 
 }
 
 .sidebar {
-    flex: 1; /* Takes up 25% of the container */
-    padding-left: 20px; /* Ensures spacing from the main content */
-    border-left: 2px solid #ccc; /* Visually separates the sidebar from the main content */
+    flex: 1; 
+    padding-left: 20px; 
+    border-left: 2px solid #ccc; 
 }
 
 .video-container {
@@ -140,12 +148,12 @@ nav {
     }
 
     .main-content, .sidebar {
-        flex: 1 100%; /* Each takes full width on small screens */
-        padding: 0; /* Remove padding for mobile view */
+        flex: 1 100%; 
+        padding: 0; 
     }
 
     .sidebar {
         border-left: none;
-        padding-top: 20px; /* Add some space above on small screens */
+        padding-top: 20px; 
     }
 }
